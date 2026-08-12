@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 5px 0;
+    border-bottom: 2px solid var(--sidebar);
+}
+
+.header-title h1{
+    line-height: 1;
+}
+.header-title h3{
+    color: color-mix(in srgb,var(--text-secondary)80%,transparent);
+}
+.header-title h3 span{
+    color: var(--accent);
+}

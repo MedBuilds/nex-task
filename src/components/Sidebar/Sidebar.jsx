@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
-import logo from "../assets/nex-task-logo.svg";
+import logo from "../../assets/nex-task-logo.svg";
 import "./Sidebar.css";
 
 function Sidebar({ theme, setTheme }) {
