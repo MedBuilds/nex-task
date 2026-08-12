@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Light themes */
+.light {
+    --bg: #f5f6f3;
+    --sidebar: #eaeeea;
+    --column: #e9ece5;
+    --card: #ffffff;
+    --modal: #ffffff;
+    --scrim: rgba(35, 38, 32, 0.45);
+    --border: #dce0d6;
+    --text-primary: #232620;
+    --text-secondary: #6e7568;
+    --accent: #5b7a5e;
+    --priority-high: #a6453b;
+    --priority-medium: #b08968;
+    --priority-low: #5b7a5e;
+}
+.light-jade {
+    --bg: #f7f9f7;
+    --sidebar: #eef3ee;
+    --column: #e7eee7;
+    --card: #ffffff;
+    --modal: #ffffff;
+    --scrim: rgba(31, 42, 36, 0.45);
+    --border: #dce5dc;
+    --text-primary: #1f2a24;
+    --text-secondary: #6b7a70;
+    --accent: #2e6b57;
+    --on-accent: #f7f9f7;
+    --priority-high: #a6453b;
+    --priority-medium: #c08a3e;
+    --priority-low: #2e6b57;
+}
+.light-marble {
+    --bg: #f7f5f0;
+    --sidebar: #efebe2;
+    --column: #e9e3d6;
+    --card: #ffffff;
+    --modal: #ffffff;
+    --scrim: rgba(28, 31, 46, 0.45);
+    --border: #dcd3c0;
+    --text-primary: #1c1f2e;
+    --text-secondary: #6b7080;
+    --accent: #2a4a7c;
+    --on-accent: #f7f5f0;
+    --priority-high: #8c3b3b;
+    --priority-medium: #b8935a;
+    --priority-low: #3f6b5c;
+}
+
+/* Dark themes */
+.dark {
+    --bg: #0a0c10;
+    --sidebar: #12161d;
+    --column: #181d25;
+    --card: #232a35;
+    --modal: #2d3542;
+    --scrim: rgba(10, 12, 16, 0.7);
+    --border: rgba(255, 255, 255, 0.06);
+    --text-primary: #e8ebee;
+    --text-secondary: #8d97a0;
+    --accent: #8fa3b8;
+    --on-accent: #0a0c10;
+    --priority-high: #a6453b;
+    --priority-medium: #b8934a;
+    --priority-low: #4f7a7a;
+}
+.dark-velvet {
+    --bg: #0d1321;
+    --sidebar: #101828;
+    --column: #141c2e;
+    --card: #1e2a45;
+    --modal: #212e4c;
+    --scrim: rgba(13, 19, 33, 0.7);
+    --border: #2e3b57;
+    --text-primary: #ede7dd;
+    --text-secondary: #8e97ac;
+    --accent: #c68b72;
+    --on-accent: #0d1321;
+    --priority-high: #9c3d54;
+    --priority-medium: #c68b72;
+    --priority-low: #4a7a8c;
+}
+.dark-aubergine {
+    --bg: #1a1122;
+    --sidebar: #150d1b;
+    --column: #1f1428;
+    --card: #2e1f3d;
+    --modal: #372544;
+    --scrim: rgba(26, 17, 34, 0.7);
+    --border: #3d2a4f;
+    --text-primary: #f1e9f5;
+    --text-secondary: #a594af;
+    --accent: #d4a24e;
+    --on-accent: #1a1122;
+    --priority-high: #8c3452;
+    --priority-medium: #d4a24e;
+    --priority-low: #6b8f7a;
+}
