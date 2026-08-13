@@ -1,0 +1,102 @@
+/* Task Card Container */
+.task-card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    transition: 0.25s;
+}
+.task-card:hover {
+    box-shadow: 0 0 3px color-mix(in srgb, var(--accent) 50%, transparent);
+    transform: scale(0.97);
+}
+
+/* Task Card Header */
+.task-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Task Card Actions */
+.task-card-actions {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    gap: 10px;
+}
+.task-card-actions svg {
+    width: 25px;
+    height: 25px;
+}
+.task-card-actions-edit,
+.task-card-actions-delete {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.task-card-actions-edit svg {
+    color: var(--priority-low);
+    transition: 0.25s;
+}
+.task-card-actions-edit:hover svg {
+    color: var(--priority-low);
+    transform: scale(1.1);
+}
+.task-card-actions-delete svg {
+    color: var(--priority-high);
+    transition: 0.25s;
+}
+.task-card-actions-delete:hover svg {
+    color: var(--priority-high);
+    transform: scale(1.1);
+}
+
+/* Task Card Main / Description */
+.task-card-description {
+    color: var(--text-secondary);
+    border-left: 2px solid var(--border);
+    padding-left: 5px;
+    margin: 10px 0;
+    border-radius: 2px;
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+/* Task Card Footer */
+.task-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Task Card Footer */
+.task-card-footer-priority-low,
+.task-card-footer-priority-medium,
+.task-card-footer-priority-high {
+    padding: 2px 5px;
+    border-radius: 7px;
+    color: var(--card);
+}
+
+.task-card-footer-priority-low {
+    border: 1px solid color-mix(in srgb, var(--priority-low) 50%, transparent);
+    background-color: color-mix(in srgb, var(--priority-low) 50%, transparent);
+}
+.task-card-footer-priority-medium {
+    border: 1px solid color-mix(in srgb, var(--priority-medium) 50%, transparent);
+    background-color: color-mix(in srgb, var(--priority-medium) 50%, transparent);
+}
+.task-card-footer-priority-high {
+    border: 1px solid color-mix(in srgb, var(--priority-high) 50%, transparent);
+    background-color: color-mix(in srgb, var(--priority-high) 50%, transparent);
+}
+
+/* Task Card Footer Date */
+.task-card-footer-date {
+    color: var(--text-secondary);
+}
