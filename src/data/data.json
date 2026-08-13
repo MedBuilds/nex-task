@@ -1,0 +1,94 @@
+{
+    "tasks": [
+        {
+            "id": "1",
+            "title": "Créer la maquette de l'application",
+            "description": "Dessiner le wireframe des 3 colonnes sur Figma ou papier avant de coder.",
+            "priority": "high",
+            "status": "done",
+            "createdAt": "2026-07-01T09:00:00.000Z",
+            "dueDate": "2026-07-03T18:00:00.000Z"
+        },
+        {
+            "id": "2",
+            "title": "Initialiser le projet React avec Vite",
+            "description": "Créer le projet, installer les dépendances de base (react-router-dom si besoin).",
+            "priority": "medium",
+            "status": "done",
+            "createdAt": "2026-07-01T09:15:00.000Z",
+            "dueDate": null
+        },
+        {
+            "id": "3",
+            "title": "Créer le composant Board",
+            "description": "Composant qui affiche les 3 colonnes côte à côte.",
+            "priority": "high",
+            "status": "in-progress",
+            "createdAt": "2026-07-02T10:00:00.000Z",
+            "dueDate": "2026-07-05T18:00:00.000Z"
+        },
+        {
+            "id": "4",
+            "title": "Créer le composant TaskCard",
+            "description": "Afficher le titre, la description, la priorité et les boutons d'action d'une tâche.",
+            "priority": "medium",
+            "status": "in-progress",
+            "createdAt": "2026-07-02T10:30:00.000Z",
+            "dueDate": null
+        },
+        {
+            "id": "5",
+            "title": "Développer le formulaire d'ajout de tâche",
+            "description": "Formulaire contrôlé avec titre, description, priorité, dans une modale.",
+            "priority": "high",
+            "status": "todo",
+            "createdAt": "2026-07-03T08:00:00.000Z",
+            "dueDate": "2026-07-10T18:00:00.000Z"
+        },
+        {
+            "id": "6",
+            "title": "Implémenter la suppression de tâche",
+            "description": "Ajouter une confirmation avant de supprimer une tâche définitivement.",
+            "priority": "low",
+            "status": "todo",
+            "createdAt": "2026-07-03T08:30:00.000Z",
+            "dueDate": null
+        },
+        {
+            "id": "7",
+            "title": "Créer le hook useLocalStorage",
+            "description": "Hook personnalisé pour lire/écrire les tâches dans le localStorage.",
+            "priority": "medium",
+            "status": "todo",
+            "createdAt": "2026-07-04T09:00:00.000Z",
+            "dueDate": "2026-07-12T18:00:00.000Z"
+        },
+        {
+            "id": "8",
+            "title": "Ajouter le changement de statut des tâches",
+            "description": "Boutons pour déplacer une tâche vers la colonne suivante ou précédente.",
+            "priority": "high",
+            "status": "todo",
+            "createdAt": "2026-07-04T09:30:00.000Z",
+            "dueDate": null
+        },
+        {
+            "id": "9",
+            "title": "Styliser l'application (CSS/Tailwind)",
+            "description": "Appliquer les couleurs par priorité, les ombres, le responsive design.",
+            "priority": "medium",
+            "status": "todo",
+            "createdAt": "2026-07-05T09:00:00.000Z",
+            "dueDate": "2026-07-20T18:00:00.000Z"
+        },
+        {
+            "id": "10",
+            "title": "Écrire le README du projet",
+            "description": "Expliquer comment installer et lancer le projet en local.",
+            "priority": "low",
+            "status": "todo",
+            "createdAt": "2026-07-05T09:15:00.000Z",
+            "dueDate": null
+        }
+    ]
+}
