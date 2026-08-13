@@ -11,7 +11,7 @@ function Column({tasks, status}) {
             <hr />
             <div className="column-tasks">
                 {filteredTasks.map((task) => {
-                    return <TaskCard task={task} />;
+                    return <TaskCard task={task} key={task.id}/>;
                 })}
             </div>
         </div>
