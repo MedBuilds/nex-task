@@ -12,11 +12,13 @@
     overflow-x: hidden;
 }
 .open-side {
+    width: 200px;
     min-width: 200px;
     align-items: flex-start;
 }
 .closed-side {
-    min-width: 60px;
+    width: 75px;
+    min-width: 75px;
     align-items: center;
 }
 

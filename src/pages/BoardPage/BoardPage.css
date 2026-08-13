@@ -1,0 +1,5 @@
+.board-page{
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 40px);
+}
