@@ -1,0 +1,46 @@
+.column {
+    border-radius: 10px;
+    background-color: var(--column);
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+/* Column h2 */
+.column h2 {
+    padding: 20px;
+}
+.column-todo h2 {
+    color: var(--priority-high);
+}
+.column-in-progress h2 {
+    color: var(--priority-medium);
+}
+.column-done h2 {
+    color: var(--priority-low);
+}
+
+/* Column hr */
+.column hr {
+    border-radius: 10px 10px 0 0;
+    margin: 0 20px 10px 20px;
+}
+.column-todo hr {
+    border: 1px solid color-mix(in srgb, var(--priority-high) 60%, transparent);
+}
+.column-in-progress hr {
+    border: 1px solid color-mix(in srgb, var(--priority-medium) 60%, transparent);
+}
+.column-done hr {
+    border: 1px solid color-mix(in srgb, var(--priority-low) 60%, transparent);
+}
+
+/* Column tasks container */
+.column-tasks {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scrollbar-width: none;
+    padding: 20px;
+}
