@@ -1,0 +1,18 @@
+dialog {
+    width: 600px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+    background-color: var(--bg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+.scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: var(--scrim);
+}
