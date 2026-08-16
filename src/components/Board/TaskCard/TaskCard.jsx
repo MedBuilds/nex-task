@@ -1,13 +1,19 @@
 import dayjs from "dayjs";
 import "./TaskCard.css";
 
-function TaskCard({ task }) {
+function TaskCard({ task, setActiveModal, setTaskToEdit}) {
     return (
         <div className="task-card">
             <div className="task-card-header">
                 <h3 className="task-card-title">{task.title}</h3>
                 <div className="task-card-actions">
-                    <button className="task-card-actions-edit">
+                    <button 
+                        className="task-card-actions-edit"
+                        onClick={()=>{
+                            setTaskToEdit(task)
+                            setActiveModal('TaskForm-Edit')
+                        }}    
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"

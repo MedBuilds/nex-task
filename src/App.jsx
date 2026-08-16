@@ -14,6 +14,7 @@ function App() {
     const [theme, setTheme] = useState("light");
     const [tasks, setTasks] = useState(Data.tasks);
     const [activeModal, setActiveModal] = useState(null);
+    const [taskToEdit, setTaskToEdit] = useState(null);
 
     return (
         <div className={`app ${theme}`}>
@@ -21,15 +22,19 @@ function App() {
 
             <main>
                 <Routes>
-                    <Route index element={<BoardPage tasks={tasks} setActiveModal={setActiveModal} />} />
+                    <Route index element={<BoardPage tasks={tasks} setActiveModal={setActiveModal} setTaskToEdit={setTaskToEdit}/>} />
                     <Route path="statistics" element={<StatisticsPage />} />
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="assistant" element={<AssistantPage />} />
                 </Routes>
             </main>
 
-            <Modal activeModal={activeModal} childName="TaskForm">
+            <Modal activeModal={activeModal} childName="TaskForm-Add">
                 <TaskForm action="add" tasks={tasks} setTasks={setTasks} setActiveModal={setActiveModal}/>
+            </Modal>
+            
+            <Modal activeModal={activeModal} childName="TaskForm-Edit">
+                <TaskForm action="edit" tasks={tasks} setTasks={setTasks} setActiveModal={setActiveModal} taskToEdit={taskToEdit}/>
             </Modal>
         </div>
     );

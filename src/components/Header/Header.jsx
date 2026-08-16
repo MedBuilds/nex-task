@@ -13,7 +13,10 @@ function Header({ title, actions, setActiveModal }) {
                 <div className="header-actions">
                     <button
                         className="add-task"
-                        onClick={() => setActiveModal("TaskForm")}
+                        onClick={() => {
+                            setActiveModal("TaskForm-Add")
+                            
+                        }}
                     >
                         Add Task
                         <svg

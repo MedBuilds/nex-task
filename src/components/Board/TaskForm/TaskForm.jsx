@@ -2,12 +2,19 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import "./TaskForm.css";
 
-function TaskForm({ action, tasks, setTasks, setActiveModal }) {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [priority, setPriority] = useState("high");
-    const [status, setStatus] = useState("todo");
-    const [dueDate, setDueDate] = useState(null);
+function TaskForm({
+    action,
+    tasks,
+    setTasks,
+    setActiveModal,
+    taskToEdit = {},
+}) {
+
+    const [title, setTitle] = useState(taskToEdit.title || "");
+    const [description, setDescription] = useState(taskToEdit.description || "");
+    const [priority, setPriority] = useState(taskToEdit.priority || "high");
+    const [status, setStatus] = useState(taskToEdit.status || "todo");
+    const [dueDate, setDueDate] = useState(taskToEdit.dueDate || "");
     const [errorMessage, setErrorMessage] = useState(false);
 
     function saveTitle(event) {
@@ -27,21 +34,41 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
     }
 
     function addTask() {
-        if (title === "") {
-            setErrorMessage("Title is required");
+        if (title.trim() === "") {
+            setErrorMessage(true);
         } else {
-            setErrorMessage(false);
             setTasks([
                 {
                     id: crypto.randomUUID(),
-                    title: title,
-                    description: description,
+                    title: title.trim(),
+                    description: description.trim(),
                     priority: priority,
                     status: status,
                     createdAt: dayjs().toISOString(),
-                    dueDate: dueDate,
+                    dueDate: dueDate || null,
                 },
                 ...tasks,
+            ]);
+            setActiveModal(null);
+        }
+    }
+
+    function editTask() {
+        if (title.trim() === "") {
+            setErrorMessage(true);
+        } else {
+            const newTasks = tasks.filter((task) => task.id !== taskToEdit.id);
+            setTasks([
+                {
+                    id: taskToEdit.id,
+                    title: title.trim(),
+                    description: description.trim(),
+                    priority: priority,
+                    status: status,
+                    createdAt: taskToEdit.createdAt,
+                    dueDate: dueDate || null,
+                },
+                ...newTasks
             ]);
             setActiveModal(null);
         }
@@ -55,17 +82,20 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
                 className="task-form-title"
                 placeholder="Task Title"
                 onChange={saveTitle}
+                value={title}
             />
             <input
                 type="text"
                 className="task-form-description"
                 placeholder="Description"
                 onChange={saveDescription}
+                value={description}
             />
             <div className="task-form-row">
                 <label htmlFor="priority">Priority</label>
                 <select
                     name="priority"
+                    id="priority"
                     value={priority}
                     onChange={savePriority}
                 >
@@ -76,7 +106,7 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
             </div>
             <div className="task-form-row">
                 <label htmlFor="status">Status</label>
-                <select name="status" value={status} onChange={saveStatus}>
+                <select name="status" id="status" value={status} onChange={saveStatus}>
                     <option value="todo">Todo</option>
                     <option value="in-progress">In-progress</option>
                     <option value="done">Done</option>
@@ -84,7 +114,12 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
             </div>
             <div className="task-form-row">
                 <label htmlFor="dueDate">Due Date</label>
-                <input type="date" onChange={saveDueDate} />
+                <input
+                    type="date"
+                    id="dueDate"
+                    value={dueDate ? dayjs(dueDate).format("YYYY-MM-DD") : ""}
+                    onChange={saveDueDate}
+                />
             </div>
 
             {errorMessage && (
@@ -98,7 +133,7 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                         <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
                     </svg>
-                    <p>{errorMessage}</p>
+                    <p>Title is required</p>
                 </div>
             )}
             <div className="task-form-btn">
@@ -108,9 +143,15 @@ function TaskForm({ action, tasks, setTasks, setActiveModal }) {
                 >
                     Cancel
                 </button>
-                <button className="task-form-btn-add" onClick={addTask}>
-                    Add
-                </button>
+                {action === "add" ? (
+                    <button className="task-form-btn-add" onClick={addTask}>
+                        Add
+                    </button>
+                ) : (
+                    <button className="task-form-btn-edit" onClick={editTask}>
+                        Edit
+                    </button>
+                )}
             </div>
         </div>
     );

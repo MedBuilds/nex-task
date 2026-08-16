@@ -55,7 +55,8 @@
     margin-top: 20px;
 }
 .task-form-btn-cancel,
-.task-form-btn-add {
+.task-form-btn-add,
+.task-form-btn-edit {
     font-size: 18px;
     padding: 10px 15px;
     flex: 1;
@@ -73,13 +74,15 @@
     background-color: var(--accent);
     transform: scale(0.97);
 }
-.task-form-btn-add {
+.task-form-btn-add,
+.task-form-btn-edit {
     background-color: var(--accent);
     border: none;
     border-radius: 10px;
     color: var(--column);
     transition: 0.25s;
 }
-.task-form-btn-add:hover {
+.task-form-btn-add:hover,
+.task-form-btn-edit:hover {
     transform: scale(0.97);
 }
