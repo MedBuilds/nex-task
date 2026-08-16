@@ -7,6 +7,7 @@ import SettingsPage from "./pages/SettingsPage/SettingsPage";
 import AssistantPage from "./pages/AssistantPage/AssistantPage";
 import Modal from "./components/Modal/Modal";
 import TaskForm from "./components/Board/TaskForm/TaskForm";
+import ConfirmDialog from "./components/ConfirmDialog/ConfirmDialog"
 import Data from "./data/data.json";
 import "./App.css";
 
@@ -15,6 +16,8 @@ function App() {
     const [tasks, setTasks] = useState(Data.tasks);
     const [activeModal, setActiveModal] = useState(null);
     const [taskToEdit, setTaskToEdit] = useState(null);
+    const [confirmMessage, setConfirmMessage] = useState(null);
+    const [confirmAction, setConfirmAction] = useState(null);
 
     return (
         <div className={`app ${theme}`}>
@@ -22,7 +25,19 @@ function App() {
 
             <main>
                 <Routes>
-                    <Route index element={<BoardPage tasks={tasks} setActiveModal={setActiveModal} setTaskToEdit={setTaskToEdit}/>} />
+                    <Route
+                        index
+                        element={
+                            <BoardPage
+                                tasks={tasks}
+                                setTasks={setTasks}
+                                setActiveModal={setActiveModal}
+                                setTaskToEdit={setTaskToEdit}
+                                setConfirmMessage={setConfirmMessage}
+                                setConfirmAction={setConfirmAction}
+                            />
+                        }
+                    />
                     <Route path="statistics" element={<StatisticsPage />} />
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="assistant" element={<AssistantPage />} />
@@ -30,11 +45,30 @@ function App() {
             </main>
 
             <Modal activeModal={activeModal} childName="TaskForm-Add">
-                <TaskForm action="add" tasks={tasks} setTasks={setTasks} setActiveModal={setActiveModal}/>
+                <TaskForm
+                    action="add"
+                    tasks={tasks}
+                    setTasks={setTasks}
+                    setActiveModal={setActiveModal}
+                />
             </Modal>
-            
+
             <Modal activeModal={activeModal} childName="TaskForm-Edit">
-                <TaskForm action="edit" tasks={tasks} setTasks={setTasks} setActiveModal={setActiveModal} taskToEdit={taskToEdit}/>
+                <TaskForm
+                    action="edit"
+                    tasks={tasks}
+                    setTasks={setTasks}
+                    setActiveModal={setActiveModal}
+                    taskToEdit={taskToEdit}
+                />
+            </Modal>
+
+            <Modal activeModal={activeModal} childName="Confirm">
+                <ConfirmDialog
+                    confirmMessage={confirmMessage}
+                    confirmAction={confirmAction}
+                    setActiveModal={setActiveModal}
+                />
             </Modal>
         </div>
     );

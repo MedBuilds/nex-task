@@ -1,7 +1,14 @@
 import dayjs from "dayjs";
 import "./TaskCard.css";
 
-function TaskCard({ task, setActiveModal, setTaskToEdit}) {
+function TaskCard({ tasks, setTasks, task, setActiveModal, setTaskToEdit, setConfirmMessage, setConfirmAction}) {
+    
+    function deleteTask(){
+        const newTasks = tasks.filter((currTask)=>currTask.id !== task.id)
+        setTasks(newTasks)
+        setActiveModal(null)
+    }
+
     return (
         <div className="task-card">
             <div className="task-card-header">
@@ -29,7 +36,14 @@ function TaskCard({ task, setActiveModal, setTaskToEdit}) {
                             />
                         </svg>
                     </button>
-                    <button className="task-card-actions-delete">
+                    <button 
+                        className="task-card-actions-delete"
+                        onClick={()=>{
+                            setConfirmMessage("Are you sure you want to delete this task?")
+                            setConfirmAction(()=>deleteTask)
+                            setActiveModal("Confirm")
+                        }}    
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"

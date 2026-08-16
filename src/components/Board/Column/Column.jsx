@@ -1,7 +1,7 @@
 import TaskCard from "../TaskCard/TaskCard";
 import "./Column.css";
 
-function Column({ tasks, status, setActiveModal, setTaskToEdit}) {
+function Column({ tasks, setTasks, status, setActiveModal, setTaskToEdit, setConfirmMessage, setConfirmAction}) {
     const filteredTasks = tasks.filter((task) => task.status === status);
     return (
         <div className={`column column-${status}`}>
@@ -14,10 +14,14 @@ function Column({ tasks, status, setActiveModal, setTaskToEdit}) {
                 {filteredTasks.map((task) => {
                     return (
                         <TaskCard
+                            tasks={tasks}
+                            setTasks={setTasks}
                             task={task}
                             key={task.id}
                             setActiveModal={setActiveModal}
                             setTaskToEdit={setTaskToEdit}
+                            setConfirmMessage={setConfirmMessage}
+                            setConfirmAction={setConfirmAction}
                         />
                     );
                 })}
