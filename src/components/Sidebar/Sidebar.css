@@ -137,13 +137,14 @@
 .open-side .side-bar-link p {
     margin-left: 10px;
     text-decoration: none;
+    line-height: 1;
 }
 .open-side .side-bar-actif-link {
     background-color: var(--bg);
     color: var(--text-primary);
     box-shadow: inset 3px 0 0 var(--accent);
     padding: 10px 5px;
-    border-radius: 20px 0 0 20px;
+    border-radius: 10px 0 0 10px;
     position: relative;
     display: flex;
     align-items: center;
@@ -165,7 +166,7 @@
     background-color: var(--bg);
     box-shadow: inset 3px 0 0 var(--accent);
     padding: 10px 5px;
-    border-radius: 50% 0 0 50%;
+    border-radius: 10px 0 0 10px;
     position: relative;
     display: flex;
     align-items: center;
