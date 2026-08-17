@@ -1,8 +1,20 @@
 import TaskCard from "../TaskCard/TaskCard";
 import "./Column.css";
 
-function Column({ tasks, setTasks, status, setActiveModal, setTaskToEdit, setConfirmMessage, setConfirmAction}) {
-    const filteredTasks = tasks.filter((task) => task.status === status);
+function Column({
+    tasks,
+    setTasks,
+    status,
+    setActiveModal,
+    setTaskToEdit,
+    setConfirmMessage,
+    setConfirmAction,
+    filter,
+}) {
+    const filteredTasks = filter === "all" 
+        ? tasks.filter((task) => task.status === status)
+        : tasks.filter((task) => task.status === status && task.priority === filter)
+    
     return (
         <div className={`column column-${status}`}>
             <h2>

@@ -2,7 +2,16 @@ import Header from "../../components/Header/Header";
 import Board from "../../components/Board/Board";
 import "./BoardPage.css";
 
-function BoardPage({ tasks, setTasks, setActiveModal, setTaskToEdit, setConfirmMessage, setConfirmAction }) {
+function BoardPage({
+    tasks,
+    setTasks,
+    setActiveModal,
+    setTaskToEdit,
+    setConfirmMessage,
+    setConfirmAction,
+    filter,
+    setFilter
+}) {
     return (
         <div className="board-page">
             <title>NexTask - Board</title>
@@ -11,6 +20,8 @@ function BoardPage({ tasks, setTasks, setActiveModal, setTaskToEdit, setConfirmM
                 title="Board"
                 actions={true}
                 setActiveModal={setActiveModal}
+                filter={filter}
+                setFilter={setFilter}
             />
             <Board
                 tasks={tasks}
@@ -19,6 +30,7 @@ function BoardPage({ tasks, setTasks, setActiveModal, setTaskToEdit, setConfirmM
                 setTaskToEdit={setTaskToEdit}
                 setConfirmMessage={setConfirmMessage}
                 setConfirmAction={setConfirmAction}
+                filter={filter}
             />
         </div>
     );

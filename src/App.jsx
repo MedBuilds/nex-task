@@ -18,6 +18,7 @@ function App() {
     const [taskToEdit, setTaskToEdit] = useState(null);
     const [confirmMessage, setConfirmMessage] = useState(null);
     const [confirmAction, setConfirmAction] = useState(null);
+    const [filter, setFilter] = useState("all")
 
     return (
         <div className={`app ${theme}`}>
@@ -35,6 +36,8 @@ function App() {
                                 setTaskToEdit={setTaskToEdit}
                                 setConfirmMessage={setConfirmMessage}
                                 setConfirmAction={setConfirmAction}
+                                filter={filter}
+                                setFilter={setFilter}
                             />
                         }
                     />
