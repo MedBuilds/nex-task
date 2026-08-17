@@ -1,12 +1,19 @@
 import dayjs from "dayjs";
 import "./TaskCard.css";
 
-function TaskCard({ tasks, setTasks, task, setActiveModal, setTaskToEdit, setConfirmMessage, setConfirmAction}) {
-    
-    function deleteTask(){
-        const newTasks = tasks.filter((currTask)=>currTask.id !== task.id)
-        setTasks(newTasks)
-        setActiveModal(null)
+function TaskCard({
+    tasks,
+    setTasks,
+    task,
+    setActiveModal,
+    setTaskToEdit,
+    setConfirmMessage,
+    setConfirmAction,
+}) {
+    function deleteTask() {
+        const newTasks = tasks.filter((currTask) => currTask.id !== task.id);
+        setTasks(newTasks);
+        setActiveModal(null);
     }
 
     return (
@@ -14,12 +21,12 @@ function TaskCard({ tasks, setTasks, task, setActiveModal, setTaskToEdit, setCon
             <div className="task-card-header">
                 <h3 className="task-card-title">{task.title}</h3>
                 <div className="task-card-actions">
-                    <button 
+                    <button
                         className="task-card-actions-edit"
-                        onClick={()=>{
-                            setTaskToEdit(task)
-                            setActiveModal('TaskForm-Edit')
-                        }}    
+                        onClick={() => {
+                            setTaskToEdit(task);
+                            setActiveModal("TaskForm-Edit");
+                        }}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +43,15 @@ function TaskCard({ tasks, setTasks, task, setActiveModal, setTaskToEdit, setCon
                             />
                         </svg>
                     </button>
-                    <button 
+                    <button
                         className="task-card-actions-delete"
-                        onClick={()=>{
-                            setConfirmMessage("Are you sure you want to delete this task?")
-                            setConfirmAction(()=>deleteTask)
-                            setActiveModal("Confirm")
-                        }}    
+                        onClick={() => {
+                            setConfirmMessage(
+                                "Are you sure you want to delete this task?"
+                            );
+                            setConfirmAction(() => deleteTask);
+                            setActiveModal("Confirm");
+                        }}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +74,31 @@ function TaskCard({ tasks, setTasks, task, setActiveModal, setTaskToEdit, setCon
                         {task.priority[0].toUpperCase() +
                             task.priority.slice(1)}
                     </p>
-                    <p className="task-card-footer-date">
-                        {task.dueDate
-                            ? `• ${dayjs(task.dueDate).format("DD MMM YYYY")}`
-                            : "• No deadline"}
-                    </p>
+
+                    <div className="task-card-footer-date">
+                        {task.dueDate &&
+                        task.status !== "done" &&
+                        dayjs().isAfter(dayjs(task.dueDate), "day") ? (
+                            <div className="deadline-date">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    className="bi bi-calendar3-event"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                                    <path d="M12 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                </svg>
+                                <p>{`${dayjs(task.dueDate).format("DD MMM YYYY")}`}</p>
+                            </div>
+                        ) : task.dueDate ? (
+                            <p>{`• ${dayjs(task.dueDate).format("DD MMM YYYY")}`}</p>
+                        ) : (
+                            "• No deadline"
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

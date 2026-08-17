@@ -100,3 +100,14 @@
 .task-card-footer-date {
     color: var(--text-secondary);
 }
+
+.deadline-date {
+    display: flex;
+    align-items: center;
+    color: var(--priority-high);
+    gap: 5px;
+    line-height: 1;
+}
+.deadline-date svg {
+    margin-bottom: 3px;
+}
