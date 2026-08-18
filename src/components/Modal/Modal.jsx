@@ -1,10 +1,14 @@
 import "./Modal.css";
 
-function Modal({ children, activeModal, childName }) {
+function Modal({ children, activeModal, childName, setActiveModal}) {
+    function closeModal(){
+        childName === "Search" && setActiveModal(null)
+    }
+    
     return (
         activeModal === childName && (
             <>
-                <div className="scrim"></div>
+                <div className="scrim" onClick={closeModal}></div>
                 <dialog open>{children}</dialog>
             </>
         )

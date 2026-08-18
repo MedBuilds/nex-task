@@ -8,6 +8,7 @@ import AssistantPage from "./pages/AssistantPage/AssistantPage";
 import Modal from "./components/Modal/Modal";
 import TaskForm from "./components/Board/TaskForm/TaskForm";
 import ConfirmDialog from "./components/ConfirmDialog/ConfirmDialog"
+import SearchDialog from "./components/Board/SearchDialog/SearchDialog"
 import Data from "./data/data.json";
 import "./App.css";
 
@@ -72,6 +73,10 @@ function App() {
                     confirmAction={confirmAction}
                     setActiveModal={setActiveModal}
                 />
+            </Modal>
+
+            <Modal activeModal={activeModal} childName="Search" setActiveModal={setActiveModal}>
+                <SearchDialog tasks={tasks}/>
             </Modal>
         </div>
     );
