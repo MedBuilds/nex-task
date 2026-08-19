@@ -11,11 +11,12 @@ import ConfirmDialog from "./components/ConfirmDialog/ConfirmDialog"
 import SearchDialog from "./components/Board/SearchDialog/SearchDialog"
 import SearchDetail from "./components/Board/SearchDialog/SearchDetail/SearchDetail";
 import Data from "./data/data.json";
+import useLocalStorage from "./hooks/useLocalStorage";
 import "./App.css";
 
 function App() {
     const [theme, setTheme] = useState("light");
-    const [tasks, setTasks] = useState(Data.tasks);
+    const [tasks, setTasks] = useLocalStorage('tasks', Data.tasks)
     const [activeModal, setActiveModal] = useState(null);
     const [taskToEdit, setTaskToEdit] = useState(null);
     const [confirmMessage, setConfirmMessage] = useState(null);
