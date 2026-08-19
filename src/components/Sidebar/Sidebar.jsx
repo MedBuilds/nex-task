@@ -1,17 +1,17 @@
-import { useState } from "react";
+import useLocalStorage from '../../hooks/useLocalStorage'
 import { NavLink } from "react-router";
 import logo from "../../assets/nex-task-logo.svg";
 import "./Sidebar.css";
 
 function Sidebar({ theme, setTheme }) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useLocalStorage("sidebarOpen",false);
 
     function themeToggle() {
         theme === "light" ? setTheme("dark") : setTheme("light");
     }
 
     function isOpenToggle() {
-        setIsOpen(!isOpen);
+        setSidebarOpen(!sidebarOpen);
     }
 
     function navLinkClass({ isActive }) {
@@ -22,7 +22,7 @@ function Sidebar({ theme, setTheme }) {
 
     return (
         <aside
-            className={isOpen ? "side-bar open-side" : "side-bar closed-side"}
+            className={sidebarOpen ? "side-bar open-side" : "side-bar closed-side"}
         >
             <div className="side-bar-header">
                 <div className="side-bar-header-logo">
