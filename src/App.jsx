@@ -15,7 +15,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import "./App.css";
 
 function App() {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useLocalStorage("theme","light");
     const [tasks, setTasks] = useLocalStorage('tasks', Data.tasks)
     const [activeModal, setActiveModal] = useState(null);
     const [taskToEdit, setTaskToEdit] = useState(null);
