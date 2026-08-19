@@ -2,7 +2,7 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import "./SearchDialog.css";
 
-function SearchDialog({ tasks }) {
+function SearchDialog({ tasks, setActiveModal, setSearchedTask }) {
     const [searchTask, setSearchTask] = useState("");
 
     function saveSearch(event) {
@@ -42,7 +42,14 @@ function SearchDialog({ tasks }) {
                         const searchIndex = task.title.toLowerCase().indexOf(searchTask.toLowerCase());
                         const searchLength = searchTask.length;
                         return (
-                            <div key={task.id} className="search-result">
+                            <div 
+                                key={task.id} 
+                                className="search-result"
+                                onClick={()=>{
+                                    setSearchedTask(task)
+                                    setActiveModal('Search-Detail')
+                                }}  
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"

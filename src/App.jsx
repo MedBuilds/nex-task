@@ -9,6 +9,7 @@ import Modal from "./components/Modal/Modal";
 import TaskForm from "./components/Board/TaskForm/TaskForm";
 import ConfirmDialog from "./components/ConfirmDialog/ConfirmDialog"
 import SearchDialog from "./components/Board/SearchDialog/SearchDialog"
+import SearchDetail from "./components/Board/SearchDialog/SearchDetail/SearchDetail";
 import Data from "./data/data.json";
 import "./App.css";
 
@@ -20,6 +21,7 @@ function App() {
     const [confirmMessage, setConfirmMessage] = useState(null);
     const [confirmAction, setConfirmAction] = useState(null);
     const [filter, setFilter] = useState("all")
+    const [searchedTask, setSearchedTask] = useState(null)
 
     return (
         <div className={`app ${theme}`}>
@@ -76,7 +78,11 @@ function App() {
             </Modal>
 
             <Modal activeModal={activeModal} childName="Search" setActiveModal={setActiveModal}>
-                <SearchDialog tasks={tasks}/>
+                <SearchDialog tasks={tasks} setActiveModal={setActiveModal} setSearchedTask={setSearchedTask}/>
+            </Modal>
+
+            <Modal activeModal={activeModal} childName="Search-Detail" setActiveModal={setActiveModal}>
+                <SearchDetail searchedTask={searchedTask} setActiveModal={setActiveModal}/>
             </Modal>
         </div>
     );
