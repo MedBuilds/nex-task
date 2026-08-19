@@ -77,14 +77,14 @@
     bottom: 20px;
     left: 20px;
 }
-.search-detail-back-btn:hover {
+.search-detail-back-btn svg:hover {
     color: var(--accent);    
 }
 .search-detail-close-btn {
     top: 20px;
     right: 20px;
 }
-.search-detail-close-btn:hover {
+.search-detail-close-btn svg:hover {
     color: var(--priority-high);
 }
 
