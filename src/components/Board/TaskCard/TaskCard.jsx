@@ -1,3 +1,4 @@
+import { useDraggable } from "@dnd-kit/react";
 import dayjs from "dayjs";
 import "./TaskCard.css";
 
@@ -10,6 +11,8 @@ function TaskCard({
     setConfirmMessage,
     setConfirmAction,
 }) {
+    const { ref } = useDraggable({ id:task.id })
+
     function deleteTask() {
         const newTasks = tasks.filter((currTask) => currTask.id !== task.id);
         setTasks(newTasks);
@@ -17,7 +20,7 @@ function TaskCard({
     }
 
     return (
-        <div className="task-card">
+        <div className="task-card" ref={ ref }>
             <div className="task-card-header">
                 <h3 className="task-card-title">{task.title}</h3>
                 <div className="task-card-actions">

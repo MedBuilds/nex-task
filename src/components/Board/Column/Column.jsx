@@ -1,3 +1,4 @@
+import { useDroppable } from "@dnd-kit/react";
 import TaskCard from "../TaskCard/TaskCard";
 import "./Column.css";
 
@@ -10,13 +11,22 @@ function Column({
     setConfirmMessage,
     setConfirmAction,
     filter,
-}) {
+}) { 
+    const { ref, isDropTarget } = useDroppable({ id: status })
+
     const filteredTasks = filter === "all" 
         ? tasks.filter((task) => task.status === status)
         : tasks.filter((task) => task.status === status && task.priority === filter)
     
     return (
-        <div className={`column column-${status}`}>
+        <div 
+            className={
+                isDropTarget
+                    ? `column column-${status} column-target`
+                    : `column column-${status}`
+            } 
+            ref={ ref }
+        >
             <h2>
                 {status[0].toUpperCase() + status.slice(1)} (
                 {filteredTasks.length})

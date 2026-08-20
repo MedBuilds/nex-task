@@ -1,10 +1,12 @@
 .column {
     border-radius: 10px;
     background-color: var(--column);
+    border: 2px solid var(--column);
     display: flex;
     flex-direction: column;
     overflow: scroll;
     flex: 1;
+    transition: 0.3s;
 }
 
 /* Column h2 */
@@ -44,4 +46,9 @@
     gap: 20px;
     scrollbar-width: none;
     padding: 20px;
+}
+
+/* Column target */
+.column-target{
+    border: 2px solid var(--accent);
 }
