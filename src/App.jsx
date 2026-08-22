@@ -45,7 +45,7 @@ function App() {
                             />
                         }
                     />
-                    <Route path="statistics" element={<StatisticsPage />} />
+                    <Route path="statistics" element={<StatisticsPage tasks={tasks}/>} />
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="assistant" element={<AssistantPage />} />
                 </Routes>

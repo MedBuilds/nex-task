@@ -1,0 +1,70 @@
+/* Statistics Card */
+.statistics-card {
+    padding: 20px;
+    background-color: var(--column);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    flex: 1;
+    transition: 0.25s;
+}
+
+/* Statistics Card (Todo) */
+.statistics-todo-card:hover{
+    border: 2px solid var(--priority-high);
+}
+.statistics-todo-card .statistics-card-title{
+    color: var(--priority-high);
+}
+.statistics-todo-card .statistics-card-progress-fill{
+    background-color: var(--priority-high);
+}
+
+/* Statistics Card (In Progress) */
+.statistics-in-progress-card:hover{
+    border: 2px solid var(--priority-medium);
+}
+.statistics-in-progress-card .statistics-card-title{
+    color: var(--priority-medium);
+}
+.statistics-in-progress-card .statistics-card-progress-fill{
+    background-color: var(--priority-medium);
+}
+
+/* Statistics Card (Done) */
+.statistics-done-card:hover{
+    border: 2px solid var(--priority-low);
+}
+.statistics-done-card .statistics-card-title{
+    color: var(--priority-low);
+}
+.statistics-done-card .statistics-card-progress-fill{
+    background-color: var(--priority-low);
+}
+
+/* Statistics Card Total */
+.statistics-card-total{
+    color: var(--text-secondary);
+}
+.statistics-card-total span{
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Statistics Card Progress */
+.statistics-card-progress {
+    width: 100%;
+    height: 12px;
+    background-color: var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    margin-top: 20px;
+}
+
+/* Statistics Card Progress Fill */
+.statistics-card-progress-fill {
+    height: 10px;
+    border-radius: 10px;
+}
