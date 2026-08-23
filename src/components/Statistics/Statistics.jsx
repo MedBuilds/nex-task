@@ -1,4 +1,5 @@
 import StatisticsCard from "./StatisticsCard/StatisticsCard"
+import StatisticsPieChart from "./StatisticsPieChart/StatisticsPieChart"
 import './Statistics.css'
 
 function Statistics({tasks}){
@@ -26,6 +27,7 @@ function Statistics({tasks}){
                 <StatisticsCard title="In-progress" total={data[1].total} totalTasks={totalTasks}/>
                 <StatisticsCard title="Done" total={data[2].total} totalTasks={totalTasks}/>
             </div>
+            <StatisticsPieChart data={data} totalTasks={totalTasks}/>
         </div>
     )
 }

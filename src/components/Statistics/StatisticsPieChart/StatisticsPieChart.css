@@ -1,0 +1,91 @@
+/* Statistics PieChart*/
+.statistics-pie-chart {
+    background-color: var(--column);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Statistics Graph Title */
+.statistics-pie-chart-title {
+    padding: 20px 20px 0;
+}
+
+/* Statistics Graph */
+.statistics-pie-chart-graph {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Statistics label*/
+.chart-total {
+    fill: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+}
+.chart-label {
+    fill: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+    padding: 10px;
+    border: 2px solid var(--border);
+    background-color: var(--column);
+    border-radius: 10px;
+}
+.custom-tooltip .custom-tooltip-title {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid var(--border);
+}
+.custom-tooltip-todo .custom-tooltip-title {
+    color: var(--priority-high);
+}
+.custom-tooltip-in-progress .custom-tooltip-title {
+    color: var(--priority-medium);
+}
+.custom-tooltip-done .custom-tooltip-title {
+    color: var(--priority-low);
+}
+.custom-tooltip-total span {
+    font-weight: bold;
+}
+
+/* Custom Legend */
+.custom-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    padding: 20px;
+}
+.custom-legend-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.custom-legend-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+.custom-legend-dot {
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+.custom-legend-percent {
+    color: var(--text-secondary);
+}
