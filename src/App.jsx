@@ -46,7 +46,7 @@ function App() {
                         }
                     />
                     <Route path="statistics" element={<StatisticsPage tasks={tasks}/>} />
-                    <Route path="settings" element={<SettingsPage />} />
+                    <Route path="settings" element={<SettingsPage theme={theme} setTheme={setTheme}/>} />
                     <Route path="assistant" element={<AssistantPage />} />
                 </Routes>
             </main>

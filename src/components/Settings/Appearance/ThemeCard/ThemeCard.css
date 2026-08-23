@@ -1,0 +1,43 @@
+/* Theme card */
+.theme-card {
+    background-color: var(--column);
+    border: 2px solid var(--border);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 0 300px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.theme-card-selected {
+    border: 2px solid var(--accent);
+}
+
+/* Theme image */
+.theme-card img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Theme info */
+.theme-card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Theme title */
+.theme-card-info-title-span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Theme Active Badge */
+.theme-card-active-badge {
+    border: 1px solid var(--accent);
+    padding: 2px 7px;
+    border-radius: 20px;
+    color: var(--column);
+    background-color: var(--accent);
+    font-weight: bold;
+}
