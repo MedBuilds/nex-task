@@ -1,11 +1,8 @@
-import useLocalStorage from '../../hooks/useLocalStorage'
 import { NavLink } from "react-router";
 import logo from "../../assets/nex-task-logo.svg";
 import "./Sidebar.css";
 
-function Sidebar({ theme, setTheme }) {
-    const [sidebarOpen, setSidebarOpen] = useLocalStorage("sidebarOpen",false);
-
+function Sidebar({ theme, setTheme, sidebarOpen, setSidebarOpen }) {
     function themeToggle() {
         theme === "light" ? setTheme("dark") : setTheme("light");
     }

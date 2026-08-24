@@ -16,6 +16,7 @@ import "./App.css";
 
 function App() {
     const [theme, setTheme] = useLocalStorage("theme","light");
+    const [sidebarOpen, setSidebarOpen] = useLocalStorage("sidebarOpen",false);
     const [tasks, setTasks] = useLocalStorage('tasks', Data.tasks)
     const [activeModal, setActiveModal] = useState(null);
     const [taskToEdit, setTaskToEdit] = useState(null);
@@ -26,7 +27,7 @@ function App() {
 
     return (
         <div className={`app ${theme}`}>
-            <Sidebar theme={theme} setTheme={setTheme} />
+            <Sidebar theme={theme} setTheme={setTheme} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
             <main>
                 <Routes>
@@ -46,7 +47,20 @@ function App() {
                         }
                     />
                     <Route path="statistics" element={<StatisticsPage tasks={tasks}/>} />
-                    <Route path="settings" element={<SettingsPage theme={theme} setTheme={setTheme}/>} />
+                    <Route 
+                        path="settings" 
+                        element={
+                            <SettingsPage 
+                                theme={theme} 
+                                setTheme={setTheme}
+                                setTasks={setTasks}
+                                setConfirmMessage={setConfirmMessage}
+                                setConfirmAction={setConfirmAction}
+                                setActiveModal={setActiveModal}
+                                setSidebarOpen={setSidebarOpen}
+                            />
+                        } 
+                    />
                     <Route path="assistant" element={<AssistantPage />} />
                 </Routes>
             </main>
