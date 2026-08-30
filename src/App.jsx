@@ -16,7 +16,7 @@ import "./App.css";
 
 function App() {
     const [theme, setTheme] = useLocalStorage("theme","light");
-    const [sidebarOpen, setSidebarOpen] = useLocalStorage("sidebarOpen",false);
+    const [sidebarOpen, setSidebarOpen] = useLocalStorage("sidebarOpen",true);
     const [tasks, setTasks] = useLocalStorage('tasks', Data.tasks)
     const [activeModal, setActiveModal] = useState(null);
     const [taskToEdit, setTaskToEdit] = useState(null);

@@ -7,7 +7,7 @@ function DangerZone({ setTasks, setConfirmMessage, setConfirmAction, setActiveMo
     }
 
     function resetApplication() {
-        setSidebarOpen(false)
+        setSidebarOpen(true)
         setTheme('light')
         setTasks([])
         setActiveModal(null)
