@@ -2,7 +2,7 @@ import Appearance from './Appearance/Appearance'
 import DangerZone from './DangerZone/DangerZone'
 import './Settings.css'
 
-function Settings({ theme, setTheme, setTasks, setConfirmMessage, setConfirmAction, setActiveModal, setSidebarOpen  }){
+function Settings({ theme, setTheme, setTasks, setConfirmMessage, setConfirmAction, setActiveModal, setSidebarOpen, setChatMessages, assistantInitialMessages  }){
     return (
         <div className="settings">
             <Appearance theme={theme} setTheme={setTheme}/>
@@ -13,6 +13,8 @@ function Settings({ theme, setTheme, setTasks, setConfirmMessage, setConfirmActi
                 setActiveModal={setActiveModal}
                 setSidebarOpen={setSidebarOpen}
                 setTheme={setTheme}
+                setChatMessages={setChatMessages}
+                assistantInitialMessages={assistantInitialMessages}
             />
         </div>
     )

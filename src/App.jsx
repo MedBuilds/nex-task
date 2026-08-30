@@ -4,12 +4,12 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import BoardPage from "./pages/BoardPage/BoardPage";
 import StatisticsPage from "./pages/StatisticsPage/StatisticsPage";
 import SettingsPage from "./pages/SettingsPage/SettingsPage";
-import AssistantPage from "./pages/AssistantPage/AssistantPage";
 import Modal from "./components/Modal/Modal";
 import TaskForm from "./components/Board/TaskForm/TaskForm";
 import ConfirmDialog from "./components/ConfirmDialog/ConfirmDialog"
 import SearchDialog from "./components/Board/SearchDialog/SearchDialog"
 import SearchDetail from "./components/Board/SearchDialog/SearchDetail/SearchDetail";
+import Assistant from "./components/Assistant/Assistant";
 import Data from "./data/data.json";
 import useLocalStorage from "./hooks/useLocalStorage";
 import "./App.css";
@@ -25,9 +25,34 @@ function App() {
     const [filter, setFilter] = useState("all")
     const [searchedTask, setSearchedTask] = useState(null)
 
+    const assistantInitialMessages = [
+        {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            message: "Hi there! 👋 Welcome to NexTask."
+        },
+        {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            message: 'Ask me things like "how do I add a task" or "how do I change the theme"...'
+        },
+        {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            message: "Happy to help!"
+        }
+    ]
+    const [chatMessages, setChatMessages] = useLocalStorage("chatMessages", assistantInitialMessages);
+
     return (
         <div className={`app ${theme}`}>
-            <Sidebar theme={theme} setTheme={setTheme} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            <Sidebar 
+                theme={theme} 
+                setTheme={setTheme} 
+                sidebarOpen={sidebarOpen} 
+                setSidebarOpen={setSidebarOpen} 
+                setActiveModal={setActiveModal}
+            />
 
             <main>
                 <Routes>
@@ -58,10 +83,11 @@ function App() {
                                 setConfirmAction={setConfirmAction}
                                 setActiveModal={setActiveModal}
                                 setSidebarOpen={setSidebarOpen}
+                                setChatMessages={setChatMessages}
+                                assistantInitialMessages={assistantInitialMessages}
                             />
                         } 
                     />
-                    <Route path="assistant" element={<AssistantPage />} />
                 </Routes>
             </main>
 
@@ -98,6 +124,10 @@ function App() {
 
             <Modal activeModal={activeModal} childName="Search-Detail" setActiveModal={setActiveModal}>
                 <SearchDetail searchedTask={searchedTask} setActiveModal={setActiveModal}/>
+            </Modal>
+
+            <Modal activeModal={activeModal} childName="Assistant" setActiveModal={setActiveModal}>
+                <Assistant setActiveModal={setActiveModal} chatMessages={chatMessages} setChatMessages={setChatMessages} assistantInitialMessages={assistantInitialMessages}/>
             </Modal>
         </div>
     );

@@ -206,6 +206,7 @@
     align-items: center;
     background-color: color-mix(in srgb, var(--accent) 80%, transparent);
     padding: 10px;
+    border: none;
     border-radius: 15px;
     width: 100%;
     margin-bottom: 10px;
@@ -213,6 +214,7 @@
     text-decoration: none;
     color: var(--bg);
     font-weight: bold;
+    cursor: pointer;
     transition: 0.25s;
 }
 .side-bar-chatbot:hover {

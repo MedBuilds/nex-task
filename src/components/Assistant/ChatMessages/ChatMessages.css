@@ -1,0 +1,5 @@
+.chat-messages {
+    margin-top: auto;
+    overflow: auto;
+    scrollbar-width: none;
+}

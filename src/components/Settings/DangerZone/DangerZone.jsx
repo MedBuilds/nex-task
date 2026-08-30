@@ -1,6 +1,6 @@
 import './DangerZone.css'
 
-function DangerZone({ setTasks, setConfirmMessage, setConfirmAction, setActiveModal, setSidebarOpen, setTheme }){
+function DangerZone({ setTasks, setConfirmMessage, setConfirmAction, setActiveModal, setSidebarOpen, setTheme, setChatMessages, assistantInitialMessages }){
     function deleteAllTasks() {
         setTasks([])
         setActiveModal(null)
@@ -11,6 +11,7 @@ function DangerZone({ setTasks, setConfirmMessage, setConfirmAction, setActiveMo
         setTheme('light')
         setTasks([])
         setActiveModal(null)
+        setChatMessages(assistantInitialMessages)
     }
 
     return (

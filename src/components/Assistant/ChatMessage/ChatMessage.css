@@ -1,0 +1,38 @@
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.chat-message svg {
+    color: var(--accent);
+    height: 30px;
+    width: 30px;
+}
+
+.chat-message p {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    color: var(--text-primary);
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+/* Assistant Message */
+.assistant-message {
+    justify-content: flex-start;
+}
+.assistant-message p {
+    background-color: color-mix(in srgb, var(--column) 90%, transparent);
+}
+
+/* User Message */
+.user-message {
+    justify-content: flex-end;
+}
+.user-message p {
+    background-color: color-mix(in srgb, var(--accent) 60%, transparent);
+}

@@ -1,0 +1,51 @@
+.assistant {
+    height: 80dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Assistant Header */
+.assistant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+    line-height: 1;
+}
+
+/* Assistant Header Title */
+.assistant-header-title h4{
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* Assistant Close Button */
+.assistant-header button{
+    display: flex;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    transition: 0.25s;
+}
+.assistant-header button:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.assistant-header button svg{
+    height: 20px;
+    width: 20px;
+}
+
+/* Assistant Main*/
+.assistant-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: scroll;
+}

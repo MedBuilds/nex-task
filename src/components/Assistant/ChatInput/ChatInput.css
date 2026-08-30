@@ -1,0 +1,74 @@
+.chat-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Chat Input */
+.chat-input input{
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 2px solid var(--border);
+    background-color: color-mix(in srgb, var(--border) 60%, transparent);
+    color: var(--text-primary);
+    border-radius: 10px;
+    font-size: 18px;
+    outline: var(--accent);
+}
+.chat-input input:focus {
+    border: 2px solid var(--accent);
+}
+
+/* Chat Send Button */
+.chat-input-send-btn {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: var(--accent);
+}
+.chat-input-send-btn svg {
+    height: 20px;
+    width: 20px;
+}
+
+/* Chat Clear Button */
+.chat-input-clear-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: transparent;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.chat-input-clear-btn:hover{
+    opacity: 1;
+    border: 2px solid var(--priority-high);
+    background-color: var(--priority-high);
+}
+
+.chat-input-clear-btn span{
+    display: none;
+    transition: 0.3s;
+}
+.chat-input-clear-btn:hover span{
+    display: block;
+    white-space: nowrap;
+}
+
+.chat-input-clear-btn svg{
+    height: 20px;
+    width: 20px;
+}
+
+
