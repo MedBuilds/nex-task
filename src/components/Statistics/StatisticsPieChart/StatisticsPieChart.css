@@ -89,3 +89,14 @@
 .custom-legend-percent {
     color: var(--text-secondary);
 }
+
+/* TABLET */
+@media screen and (max-width: 1023px) {
+    .statistics-pie-chart-graph {
+        flex-direction: column;
+    }
+
+    .custom-legend {
+        width: 100%;
+    }
+}

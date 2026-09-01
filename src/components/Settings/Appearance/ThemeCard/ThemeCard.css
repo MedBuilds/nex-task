@@ -8,6 +8,9 @@
     cursor: pointer;
     transition: 0.25s;
 }
+.theme-card:hover {
+    border: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+}
 .theme-card-selected {
     border: 2px solid var(--accent);
 }

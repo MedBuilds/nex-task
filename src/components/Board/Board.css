@@ -1,6 +1,14 @@
 .board{
     display: flex;
     gap: 20px;
-    overflow: hidden ;
+    overflow: auto ;
     flex-grow: 1;
+}
+
+/* TABLET */
+@media screen and (max-width: 1023px) {
+    .board{
+        flex-direction: column;
+        flex-grow: 0;
+    }
 }

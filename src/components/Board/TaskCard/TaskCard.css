@@ -20,8 +20,12 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 10px;
+    overflow: auto;
 }
-
+/* Task Card Title */
+.task-card-title {
+    font-size: 18px;
+}
 /* Task Card Actions */
 .task-card-actions {
     display: flex;
@@ -30,41 +34,36 @@
     gap: 10px;
 }
 .task-card-actions svg {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 .task-card-actions-edit,
 .task-card-actions-delete {
     border: none;
     background-color: transparent;
     cursor: pointer;
-}
-.task-card-actions-edit svg {
-    color: var(--priority-low);
+    opacity: 0.5;
+    color: var(--text-secondary);
     transition: 0.25s;
+}
+.task-card-actions-edit:hover,
+.task-card-actions-delete:hover {
+    opacity: 1;
 }
 .task-card-actions-edit:hover svg {
     color: var(--priority-low);
-    transform: scale(1.1);
-}
-.task-card-actions-delete svg {
-    color: var(--priority-high);
-    transition: 0.25s;
 }
 .task-card-actions-delete:hover svg {
     color: var(--priority-high);
-    transform: scale(1.1);
 }
 
 /* Task Card Main / Description */
 .task-card-description {
     color: var(--text-secondary);
-    border-left: 2px solid var(--border);
-    padding-left: 5px;
     margin: 10px 0;
     border-radius: 2px;
     line-height: 1.5;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 /* Task Card Footer */
@@ -72,27 +71,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
 }
 
 /* Task Card Footer */
 .task-card-footer-priority-low,
 .task-card-footer-priority-medium,
 .task-card-footer-priority-high {
-    padding: 2px 5px;
-    border-radius: 7px;
-    color: var(--card);
+    padding: 1px 7px;
+    border-radius: 10px;
+    color: var(--text-primary);
 }
 
 .task-card-footer-priority-low {
-    border: 1px solid color-mix(in srgb, var(--priority-low) 50%, transparent);
     background-color: color-mix(in srgb, var(--priority-low) 50%, transparent);
 }
 .task-card-footer-priority-medium {
-    border: 1px solid color-mix(in srgb, var(--priority-medium) 50%, transparent);
     background-color: color-mix(in srgb, var(--priority-medium) 50%, transparent);
 }
 .task-card-footer-priority-high {
-    border: 1px solid color-mix(in srgb, var(--priority-high) 50%, transparent);
     background-color: color-mix(in srgb, var(--priority-high) 50%, transparent);
 }
 
@@ -108,6 +105,8 @@
     gap: 5px;
     line-height: 1;
 }
-.deadline-date svg {
-    margin-bottom: 3px;
+
+.deadline-date svg{
+    height: 15px;
+    width: 15px;
 }

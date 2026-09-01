@@ -94,7 +94,7 @@ function StatisticsPieChart({ data, totalTasks }) {
                                     {status.status}
                                 </p>   
                                 <p className="custom-legend-percent">
-                                    {percent}%
+                                    {isNaN(percent)? 0 : percent}%
                                 </p>
                             </div>
                         );

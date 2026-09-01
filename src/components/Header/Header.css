@@ -10,6 +10,7 @@ header {
 /* Header Title */
 .header-title h1 {
     line-height: 1;
+    font-size: 30px;
 }
 .header-title h3 {
     color: color-mix(in srgb, var(--text-secondary) 80%, transparent);
@@ -93,4 +94,64 @@ header {
 .add-task svg {
     width: 20px;
     height: 20px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 767px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background-color: var(--bg);
+    }
+}
+
+@media screen and (max-width: 522px) {
+    /* Header Title */
+    .header-title h1 {
+        font-size: 20px;
+    }
+    .header-title h3 {
+        font-size: 17px;
+    }
+    
+    /* Header Actions */
+    .header-actions{
+        gap: 5px;
+    }
+    
+    /* Search */
+    .search-btn {
+        padding: 5px;
+    }
+    
+    /* Filter */
+    .filter-container svg{
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        color: var(--accent);
+        z-index: 0;
+    }
+    .filter{
+        padding: 5px 20px 5px 5px;
+    }
+    
+    /* Filter and Add Task */
+    .filter,
+    .add-task{
+        gap: 5px;
+        font-size: 14px;
+    }
+    
+    /* Add Task */
+    .add-task {
+        padding: 5px;
+    }
+    .add-task svg {
+        width: 15px;
+        height: 15px;
+    }
+
 }

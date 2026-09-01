@@ -74,8 +74,7 @@ function TaskCard({
                 <h4 className="task-card-description">{task.description}</h4>
                 <div className="task-card-footer">
                     <p className={`task-card-footer-priority-${task.priority}`}>
-                        {task.priority[0].toUpperCase() +
-                            task.priority.slice(1)}
+                        {task.priority[0].toUpperCase() + task.priority.slice(1)}
                     </p>
 
                     <div className="task-card-footer-date">
@@ -97,9 +96,9 @@ function TaskCard({
                                 <p>{`${dayjs(task.dueDate).format("DD MMM YYYY")}`}</p>
                             </div>
                         ) : task.dueDate ? (
-                            <p>{`• ${dayjs(task.dueDate).format("DD MMM YYYY")}`}</p>
+                            <p>{`${dayjs(task.dueDate).format("DD MMM YYYY")}`}</p>
                         ) : (
-                            "• No deadline"
+                            "No deadline"
                         )}
                     </div>
                 </div>

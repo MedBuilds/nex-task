@@ -7,7 +7,7 @@ function SearchDetail({ searchedTask, setActiveModal }) {
             <h2 className="search-detail-title">{searchedTask.title}</h2>
 
             <h3 className="search-detail-description">
-                {searchedTask.description}
+                {searchedTask.description === "" ? "No description..." : searchedTask.description}
             </h3>
 
             <div className="search-detail-footer">

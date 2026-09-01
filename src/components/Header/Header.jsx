@@ -4,9 +4,9 @@ function Header({ title, actions, setActiveModal, filter, setFilter }) {
     return (
         <header>
             <div className="header-title">
-                <h1>NexTask - {title}</h1>
+                <h1>NexTask</h1>
                 <h3>
-                    Plan <span>•</span> Focus <span>•</span> Achieve
+                    <span>•</span> {title}
                 </h3>
             </div>
             {actions && (
@@ -57,7 +57,7 @@ function Header({ title, actions, setActiveModal, filter, setFilter }) {
                             setActiveModal("TaskForm-Add");
                         }}
                     >
-                        Add Task
+                        <span>Add Task</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"

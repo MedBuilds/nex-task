@@ -1,4 +1,5 @@
 .column {
+    padding: 20px;
     border-radius: 10px;
     background-color: var(--column);
     border: 2px solid var(--column);
@@ -7,35 +8,86 @@
     overflow: scroll;
     flex: 1;
     transition: 0.3s;
+    position: relative;
 }
 
-/* Column h2 */
-.column h2 {
-    padding: 20px;
+/* Column Header */
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.column-todo h2 {
+
+/* Column Header h2 */
+.column-header h2 {
+    font-size: 20px; 
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+}
+.column-header h2 span {
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.column-todo .column-header h2 {
     color: var(--priority-high);
 }
-.column-in-progress h2 {
+.column-todo .column-header h2 span {
+    background-color: color-mix(in srgb, var(--priority-high) 30%, transparent)
+}
+.column-in-progress .column-header h2 {
     color: var(--priority-medium);
 }
-.column-done h2 {
+.column-in-progress .column-header h2 span {
+    background-color: color-mix(in srgb, var(--priority-medium) 30%, transparent)
+}
+.column-done .column-header h2 {
     color: var(--priority-low);
+}
+.column-done .column-header h2 span {
+    background-color: color-mix(in srgb, var(--priority-low) 30%, transparent)
+}
+
+/* Show Tasks Button */
+.show-column-tasks-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.show-column-tasks-btn svg{
+    height: 20px;
+    width: 20px;
+    color: var(--text-primary);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.show-column-tasks-btn:hover svg{
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Column hr */
-.column hr {
-    border-radius: 10px 10px 0 0;
-    margin: 0 20px 10px 20px;
+.column-hr {
+    border-radius: 10px;
+    margin: 10px 0;
 }
-.column-todo hr {
-    border: 1px solid color-mix(in srgb, var(--priority-high) 60%, transparent);
+.column-todo .column-hr {
+    background-color:  color-mix(in srgb, var(--priority-high) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--priority-high) 30%, transparent);
 }
-.column-in-progress hr {
-    border: 1px solid color-mix(in srgb, var(--priority-medium) 60%, transparent);
+.column-in-progress .column-hr {
+    background-color:  color-mix(in srgb, var(--priority-medium) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--priority-medium) 30%, transparent);
 }
-.column-done hr {
-    border: 1px solid color-mix(in srgb, var(--priority-low) 60%, transparent);
+.column-done .column-hr {
+    background-color:  color-mix(in srgb, var(--priority-low) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--priority-low) 30%, transparent);
 }
 
 /* Column tasks container */
@@ -45,10 +97,48 @@
     flex-direction: column;
     gap: 20px;
     scrollbar-width: none;
-    padding: 20px;
+}
+.column-tasks-hidden {
+    display: none;
+}
+
+/* Column tasks Empty */
+.column-tasks-empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 15px;
+    color: var(--text-secondary);
+    white-space: nowrap;
 }
 
 /* Column target */
 .column-target{
     border: 2px solid var(--accent);
+}
+
+/* Column Hidden */
+.column-hidden {
+    height: fit-content;
+}
+
+/* TABLET */
+@media screen and (max-width: 1023px) {
+    .column {
+        height: fit-content;
+        overflow: visible;
+    }
+    .column-tasks-empty {
+        position: relative;
+        width: fit-content;
+        text-align: center;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 767px) {
+    .column-tasks-empty {
+        margin-top: 30px;
+    }
 }

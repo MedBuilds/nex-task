@@ -25,6 +25,7 @@
 }
 .statistics-in-progress-card .statistics-card-title{
     color: var(--priority-medium);
+    white-space: nowrap;
 }
 .statistics-in-progress-card .statistics-card-progress-fill{
     background-color: var(--priority-medium);
@@ -67,4 +68,11 @@
 .statistics-card-progress-fill {
     height: 10px;
     border-radius: 10px;
+}
+
+/* TABLET */
+@media screen and (max-width: 1023px) {
+    .statistics-card {
+        width: 100%;
+    }
 }

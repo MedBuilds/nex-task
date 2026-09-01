@@ -7,7 +7,7 @@
 .danger-zone-actions {
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--priority-high);
+    border: 1px solid var(--priority-high);
     border-radius: 10px;
     margin-top: 20px;
 }
