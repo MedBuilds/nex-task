@@ -5,11 +5,13 @@ function Modal({ children, activeModal, childName, setActiveModal}) {
         setActiveModal(null)
     }
     
+    const confirmStyle = childName === "Confirm" ? { width: 400 } : {}
+    
     return (
         activeModal === childName && (
             <>
                 <div className="scrim" onClick={closeModal}></div>
-                <dialog open>{children}</dialog>
+                <dialog open style={confirmStyle}>{children}</dialog>
             </>
         )
     );
