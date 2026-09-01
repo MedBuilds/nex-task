@@ -91,7 +91,7 @@ function App() {
                 </Routes>
             </main>
 
-            <Modal activeModal={activeModal} childName="TaskForm-Add">
+            <Modal activeModal={activeModal} childName="TaskForm-Add" setActiveModal={setActiveModal}>
                 <TaskForm
                     action="add"
                     tasks={tasks}
@@ -100,7 +100,7 @@ function App() {
                 />
             </Modal>
 
-            <Modal activeModal={activeModal} childName="TaskForm-Edit">
+            <Modal activeModal={activeModal} childName="TaskForm-Edit" setActiveModal={setActiveModal}>
                 <TaskForm
                     action="edit"
                     tasks={tasks}
@@ -110,7 +110,7 @@ function App() {
                 />
             </Modal>
 
-            <Modal activeModal={activeModal} childName="Confirm">
+            <Modal activeModal={activeModal} childName="Confirm" setActiveModal={setActiveModal}>
                 <ConfirmDialog
                     confirmMessage={confirmMessage}
                     confirmAction={confirmAction}

@@ -2,9 +2,7 @@ import "./Modal.css";
 
 function Modal({ children, activeModal, childName, setActiveModal}) {
     function closeModal(){
-        if (childName === "Search" || childName === "Search-Detail") {
-            setActiveModal(null)
-        }
+        setActiveModal(null)
     }
     
     return (
